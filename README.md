@@ -89,9 +89,10 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 - 专业页面布局和页眉页脚
 
 ### 参考文献
-- 手动参考文献管理
+- 使用 BibTeX 进行参考文献管理
 - 支持标准引用格式
-- 示例引用条目
+- 示例参考文献数据库 (references.bib)
+- 自动生成和排序参考文献
 
 ## 自定义模板
 
@@ -149,16 +150,34 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 ```
 
 ### 添加参考文献
-在 `thebibliography` 环境中添加新的参考文献：
+在 `references.bib` 文件中添加新的参考文献条目：
 
-```latex
-\bibitem{your-cite-key} 作者. 文献标题[文献类型]. 出版信息, 年份.
+```bibtex
+@article{your-cite-key,
+  title={文献标题},
+  author={作者姓名},
+  journal={期刊名称},
+  volume={卷号},
+  number={期号},
+  pages={页码},
+  year={年份},
+  publisher={出版社}
+}
+
+@book{another-cite-key,
+  title={书名},
+  author={作者姓名},
+  year={年份},
+  publisher={出版社}
+}
 ```
 
 然后在正文中引用：
 ```latex
 如文献\cite{your-cite-key}所述...
 ```
+
+模板会自动处理参考文献的生成和排序。
 
 ## 系统要求
 
