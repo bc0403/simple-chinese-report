@@ -1,0 +1,218 @@
+% 简洁中文学术报告模板
+% 基于浙江大学 zjuthesis 模板简化而来
+% 适用于简单的中文学术报告、课程论文等
+%
+% 编译说明：
+% 方法1: 使用 compile-simple.sh (Linux/Mac) 或 compile-simple.bat (Windows)
+% 方法2: 手动编译: xelatex -> biber -> xelatex -> xelatex
+% 方法3: 使用 latexmk: latexmk -pdf -xelatex simple-chinese-report.tex
+% 方法4: 使用自定义 latexmk 配置: latexmk -r simple-latexmkrc simple-chinese-report.tex
+
+\documentclass[UTF8, zihao=-4]{ctexart}
+
+% 页面设置
+\usepackage[top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{caption}
+
+% 设置段落间距和缩进
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{2em}
+
+% 设置章节格式
+\ctexset{
+    section = {
+        format = \zihao{-3}\bfseries,
+        nameformat = {},
+        aftername = \quad,
+        beforeskip = 1.0ex plus 0.2ex minus .2ex,
+        afterskip = 1.0ex plus 0.2ex minus .2ex,
+    },
+    subsection = {
+        format = \zihao{4}\bfseries,
+        nameformat = {},
+        aftername = \quad,
+        beforeskip = 1.0ex plus 0.2ex minus .2ex,
+        afterskip = 1.0ex plus 0.2ex minus .2ex,
+    },
+    subsubsection = {
+        format = \zihao{-4}\bfseries,
+        nameformat = {},
+        aftername = \quad,
+        beforeskip = 1.0ex plus 0.2ex minus .2ex,
+        afterskip = 1.0ex plus 0.2ex minus .2ex,
+    }
+}
+
+% 设置页眉页脚
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\zihao{-5}\leftmark}
+\fancyfoot[C]{\zihao{-5}\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% 设置图表标题格式
+\captionsetup[figure]{
+    font=small,
+    labelfont=bf,
+    labelsep=space
+}
+\captionsetup[table]{
+    font=small,
+    labelfont=bf,
+    labelsep=space
+}
+
+% 自定义命令
+\newcommand{\keywords}[1]{\textbf{关键词：}#1}
+\newcommand{\abstracttext}[1]{\textbf{摘要：}#1}
+
+\begin{document}
+
+% 标题页
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\zihao{1}\bfseries 报告标题\\}
+    \vspace{1cm}
+
+    {\zihao{3} 副标题（可选）\\}
+    \vspace{3cm}
+
+    {\zihao{4}
+    \begin{tabular}{rl}
+        作者： & 姓名 \\
+        学号： & 12345678 \\
+        专业： & 专业名称 \\
+        学院： & 学院名称 \\
+        指导教师： & 教师姓名 \\
+        日期： & \today
+    \end{tabular}
+    }
+    \vfill
+
+    {\zihao{-4} 学校名称\\}
+    \vspace{1cm}
+\end{titlepage}
+
+% 摘要页
+\newpage
+\thispagestyle{empty}
+\section*{摘要}
+\abstracttext{
+    这里是摘要内容。摘要应该简洁明了地概括报告的主要内容、研究方法、主要发现和结论。
+    摘要通常在200-300字之间，能够让读者快速了解报告的核心内容。
+}
+
+\vspace{1em}
+\keywords{关键词1；关键词2；关键词3}
+
+\newpage
+\tableofcontents
+\newpage
+
+% 正文开始
+\section{引言}
+
+这里是引言部分。引言应该介绍研究背景、研究意义、国内外研究现状以及本文的研究内容和结构安排。
+
+近年来，人工智能技术在各个领域取得了显著进展\cite{lecun2015deep}。特别是在自然语言处理方面，深度学习模型\cite{vaswani2017attention}已经能够处理复杂的语言任务。这些技术的发展为本研究提供了重要的理论基础和技术支持。
+
+\subsection{研究背景}
+
+研究背景部分应该说明为什么选择这个研究课题，以及该课题在当前学术领域或实际应用中的重要性。
+
+\subsection{研究意义}
+
+研究意义可以从理论意义和实践意义两个方面进行阐述。
+
+\section{相关工作}
+
+相关工作部分应该综述与本研究相关的已有研究成果，分析现有研究的优缺点，并指出本研究的创新点。
+
+在相关研究领域，已有许多学者进行了深入探索。例如，在机器学习领域，\cite{goodfellow2016deep} 系统性地介绍了深度学习的基本原理和应用。同时，在中文自然语言处理方面，\cite{liu2019roberta} 提出的中文预训练模型在多个任务上取得了优异表现。
+
+\subsection{国内外研究现状}
+
+可以分别介绍国内外的研究现状，并进行对比分析。
+
+\section{研究方法}
+
+研究方法部分应该详细说明研究所采用的方法、技术路线、实验设计等。
+
+\subsection{理论框架}
+
+如果有理论框架，可以在这里进行说明。
+
+\subsection{实验设计}
+
+实验设计部分应该包括实验对象、实验设备、实验步骤等内容。
+
+\section{结果与分析}
+
+结果与分析部分应该展示研究结果，并对结果进行详细的分析和讨论。
+
+\subsection{实验结果}
+
+可以在这里展示实验数据、图表等。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{example-image}
+    \caption{示例图片}
+    \label{fig:example}
+\end{figure}
+
+\subsection{数据分析}
+
+对实验结果进行统计分析，验证假设或得出结论。
+
+\begin{table}[htbp]
+    \centering
+    \caption{示例表格}
+    \label{tab:example}
+    \begin{tabular}{ccc}
+        \toprule
+        项目 & 数值1 & 数值2 \\
+        \midrule
+        实验组 & 10.5 & 20.3 \\
+        对照组 & 8.2 & 18.7 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\section{结论}
+
+结论部分应该总结全文的主要内容和研究成果，指出研究的局限性，并提出未来研究的方向。
+
+\subsection{研究总结}
+
+简要总结研究的主要内容和重要发现。
+
+\subsection{研究展望}
+
+提出未来可以进一步研究的方向和问题。
+
+\begin{thebibliography}{99}
+\bibitem{lecun2015deep} LeCun Y, Bengio Y, Hinton G. Deep learning[J]. Nature, 2015, 521(7553): 436-444.
+\bibitem{vaswani2017attention} Vaswani A, Shazeer N, Parmar N, et al. Attention is all you need[C]//Advances in Neural Information Processing Systems. 2017: 5998-6008.
+\bibitem{goodfellow2016deep} Goodfellow I, Bengio Y, Courville A. Deep learning[M]. MIT press, 2016.
+\bibitem{liu2019roberta} Liu Y, Ott M, Goyal N, et al. Roberta: A robustly optimized bert pretraining approach[J]. arXiv preprint arXiv:1907.11692, 2019.
+\end{thebibliography}
+
+\newpage
+\section*{致谢}
+
+感谢所有对本文研究工作给予支持和帮助的个人和机构。
+
+感谢指导教师的悉心指导，感谢实验室同学的帮助，感谢家人的支持。
+
+\end{document}
