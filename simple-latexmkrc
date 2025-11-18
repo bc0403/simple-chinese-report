@@ -1,0 +1,31 @@
+# LaTeXmk configuration file for simple-chinese-report template
+
+# Use XeLaTeX for Chinese support
+$pdf_mode = 1;
+$pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode -file-line-error';
+
+# Use biber for bibliography
+$bibtex_use = 2;
+$biber = 'biber --bblencoding=utf8 -u -U --output_safechars';
+
+# Clean up auxiliary files
+$clean_ext = "%R.aux %R.bbl %R.bcf %R.blg %R.fdb_latexmk %R.fls %R.lof %R.log %R.lot %R.out %R.run.xml %R.synctex.gz %R.toc";
+
+# Enable synctex for forward/inverse search
+$pdf_previewer = 'start ""';
+
+# Make sure we process the bibliography
+add_cus_dep('bcf', 'bbl', 0, 'run_biber');
+sub run_biber {
+    my ($base_name, $path) = fileparse( $_[0] );
+    pushd $path;
+    my $return = system( "biber", $base_name );
+    popd;
+    return $return;
+}
+
+# Enable continuous preview mode
+$preview_continuous_mode = 1;
+
+# Set the default target file
+$default_target = 'simple-chinese-report.pdf';
