@@ -19,7 +19,13 @@ echo "Compiling simple-chinese-report.tex..."
 # First compilation
 xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 
-# Second compilation to resolve cross-references
+# Process bibliography with BibTeX
+bibtex simple-chinese-report
+
+# Second compilation to incorporate bibliography
+xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
+
+# Third compilation to resolve all references
 xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 
 echo "Compilation complete. Output: simple-chinese-report.pdf"

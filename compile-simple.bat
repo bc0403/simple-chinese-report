@@ -18,7 +18,13 @@ echo Compiling simple-chinese-report.tex...
 REM First compilation
 xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 
-REM Second compilation to resolve cross-references
+REM Process bibliography with BibTeX
+bibtex simple-chinese-report
+
+REM Second compilation to incorporate bibliography
+xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
+
+REM Third compilation to resolve all references
 xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 
 echo Compilation complete. Output: simple-chinese-report.pdf
