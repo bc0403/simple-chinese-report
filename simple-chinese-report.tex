@@ -157,7 +157,32 @@
 
 \subsection{实验设计}
 
-实验设计部分应该包括实验对象、实验设备、实验步骤等内容。
+实验设计部分应该包括实验对象、实验设备、实验步骤等内容。实验的整体流程如图\ref{fig:workflow}所示，该流程图清晰地展示了从数据准备到结果分析的完整过程。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{example-image-a}  % `example-image-a` is a place holder
+    \caption{实验流程图}
+    \label{fig:workflow}
+\end{figure}
+
+实验的具体参数设置如表\ref{tab:parameters}所示，这些参数的选择基于前期预实验结果。
+
+\begin{table}[htbp]
+    \centering
+    \caption{实验参数设置}
+    \label{tab:parameters}
+    \begin{tabular}{lcc}
+        \toprule
+        参数名称 & 数值 & 单位 \\
+        \midrule
+        学习率 & 0.001 & - \\
+        批大小 & 32 & 样本数 \\
+        训练轮数 & 100 & 轮 \\
+        优化器 & Adam & - \\
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \section{结果与分析}
 
@@ -165,18 +190,18 @@
 
 \subsection{实验结果}
 
-可以在这里展示实验数据、图表等。
+可以在这里展示实验数据、图表等。如图\ref{fig:example}所示，我们使用了示例图片来展示实验结果的可视化表示。该图片清晰地展示了实验数据的分布情况。
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{example-image}
-    \caption{示例图片}
+    \includegraphics[width=0.6\textwidth]{example-image}  % `example-image` is a place holder
+    \caption{实验结果图}
     \label{fig:example}
 \end{figure}
 
 \subsection{数据分析}
 
-对实验结果进行统计分析，验证假设或得出结论。
+对实验结果进行统计分析，验证假设或得出结论。表\ref{tab:example}展示了实验组和对照组的详细数据对比。从表中可以看出，实验组的各项指标均优于对照组。
 
 \begin{table}[htbp]
     \centering
@@ -192,17 +217,47 @@
     \end{tabular}
 \end{table}
 
+通过对比图\ref{fig:example}和表\ref{tab:example}中的数据，我们可以得出初步的实验结论。
+
+\subsection{性能对比}
+
+为了进一步验证方法的有效性，我们进行了多组对比实验。图\ref{fig:performance}展示了不同方法在测试集上的性能对比结果。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figs/performance.png} % `performance.png` is a real file in `./figs/' folder
+    \caption{不同方法性能对比}
+    \label{fig:performance}
+\end{figure}
+
+从图\ref{fig:performance}可以看出，本文提出的方法在各项指标上均优于传统方法。具体数值对比见表\ref{tab:comparison}。
+
+\begin{table}[htbp]
+    \centering
+    \caption{不同方法性能指标对比}
+    \label{tab:comparison}
+    \begin{tabular}{lcccc}
+        \toprule
+        方法 & 准确率 & 精确率 & 召回率 & F1分数 \\
+        \midrule
+        传统方法A & 0.85 & 0.83 & 0.86 & 0.84 \\
+        传统方法B & 0.88 & 0.87 & 0.89 & 0.88 \\
+        本文方法 & 0.95 & 0.94 & 0.96 & 0.95 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
 \section{结论}
 
 结论部分应该总结全文的主要内容和研究成果，指出研究的局限性，并提出未来研究的方向。
 
 \subsection{研究总结}
 
-简要总结研究的主要内容和重要发现。
+简要总结研究的主要内容和重要发现。基于图\ref{fig:workflow}所示的实验流程和表\ref{tab:parameters}中的参数设置，我们完成了系统的实验验证。实验结果表明，如图\ref{fig:example}和图\ref{fig:performance}所示，本文提出的方法在多个方面都取得了显著改进。表\ref{tab:comparison}的详细数据对比进一步证实了方法的有效性。
 
 \subsection{研究展望}
 
-提出未来可以进一步研究的方向和问题。
+提出未来可以进一步研究的方向和问题。虽然本文的实验结果令人满意，但仍存在一些局限性。例如，在表\ref{tab:example}中展示的数据规模相对较小，未来可以考虑扩大数据集规模。同时，基于图\ref{fig:performance}中观察到的性能趋势，可以探索更复杂的模型结构来进一步提升性能。
 
 % 参考文献
 \bibliography{references}
