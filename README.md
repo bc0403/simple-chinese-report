@@ -11,8 +11,10 @@ Simple Chinese Academic Report Template
 simple-chinese-template/
 ├── simple-chinese-report.tex  # 主模板文件
 ├── references.bib             # 参考文献数据库示例
-├── compile-simple.sh          # Linux/Mac 编译脚本
-├── compile-simple.bat         # Windows 编译脚本
+├── compile-simple.sh          # Linux/Mac 编译脚本（特定文件）
+├── compile-simple.bat         # Windows 编译脚本（特定文件）
+├── compile-any.sh             # Linux/Mac 通用编译脚本
+├── compile-any.bat            # Windows 通用编译脚本
 ├── simple-latexmkrc           # LaTeXmk 配置文件
 ├── .gitignore                 # Git 忽略文件
 └── README.md                  # 本说明文件
@@ -22,6 +24,7 @@ simple-chinese-template/
 
 ### 方法1: 使用编译脚本
 
+#### 编译特定文件
 **Linux/Mac:**
 ```bash
 ./compile-simple.sh
@@ -30,6 +33,26 @@ simple-chinese-template/
 **Windows:**
 ```cmd
 compile-simple.bat
+```
+
+#### 编译任意文件（推荐）
+**Linux/Mac:**
+```bash
+./compile-any.sh 文件名.tex
+```
+
+**Windows:**
+```cmd
+compile-any.bat 文件名.tex
+```
+
+清理辅助文件：
+```bash
+./compile-any.sh 文件名.tex clean
+```
+或
+```cmd
+compile-any.bat 文件名.tex clean
 ```
 
 ### 方法2: 使用 LaTeXmk
