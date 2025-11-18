@@ -9,9 +9,7 @@ Simple Chinese Academic Report Template
 
 ```
 simple-chinese-template/
-├── images/                    # 图片文件夹
-│   ├── workflow.png           # 实验流程图
-│   ├── results.png            # 实验结果图
+├── figs/                      # 图片文件夹
 │   └── performance.png        # 性能对比图
 ├── simple-chinese-report.tex  # 主模板文件
 ├── references.bib             # 参考文献数据库示例
@@ -133,22 +131,20 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 ### 添加图表
 
 #### 图片使用
-模板已预置图片文件夹 `images/`，包含以下图片文件：
+模板已预置图片文件夹 `figs/`，包含以下图片文件：
 
-- `workflow.png` - 实验流程图
-- `results.png` - 实验结果图
 - `performance.png` - 性能对比图
 
 **注意：** 当前模板中的图片文件为文本格式的占位符，需要替换为实际的图片文件。
 
 **替换为实际图片：**
-1. 将您的图片文件放入 `images/` 文件夹
+1. 将您的图片文件放入 `figs/` 文件夹
 2. 在 LaTeX 代码中更新图片路径：
 
 ```latex
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{images/your-image.png}
+    \includegraphics[width=0.6\textwidth]{figs/your-image.png}
     \caption{图片标题}
     \label{fig:your-label}
 \end{figure}
