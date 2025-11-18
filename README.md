@@ -135,7 +135,7 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 
 - `performance.png` - 性能对比图
 
-**注意：** 当前模板中的图片文件为文本格式的占位符，需要替换为实际的图片文件。
+**注意：** 当前模板中的其他图片文件为文本格式的占位符，需要替换为实际的图片文件。
 
 **替换为实际图片：**
 1. 将您的图片文件放入 `figs/` 文件夹
