@@ -9,10 +9,11 @@ Simple Chinese Academic Report Template
 
 ```
 simple-chinese-template/
+├── bib/                       # 参考文献文件夹
+│   └── references.bib         # 参考文献数据库示例
 ├── figs/                      # 图片文件夹
 │   └── performance.png        # 性能对比图
 ├── simple-chinese-report.tex  # 主模板文件
-├── references.bib             # 参考文献数据库示例
 ├── compile-simple.sh          # Linux/Mac 编译脚本（特定文件）
 ├── compile-simple.bat         # Windows 编译脚本（特定文件）
 ├── compile-any.sh             # Linux/Mac 通用编译脚本
@@ -93,8 +94,9 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 ### 参考文献
 - 使用 BibTeX 进行参考文献管理
 - 支持标准引用格式
-- 示例参考文献数据库 (references.bib)
+- 示例参考文献数据库 (bib/references.bib)
 - 自动生成和排序参考文献
+- 专为 JabRef 用户优化，支持 .bib 文件和 PDF 文件在同一目录管理
 
 ## 自定义模板
 
@@ -169,7 +171,7 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
 ```
 
 ### 添加参考文献
-在 `references.bib` 文件中添加新的参考文献条目：
+在 `bib/references.bib` 文件中添加新的参考文献条目：
 
 ```bibtex
 @article{your-cite-key,
@@ -190,6 +192,8 @@ xelatex -synctex=1 -interaction=nonstopmode simple-chinese-report.tex
   publisher={出版社}
 }
 ```
+
+**JabRef 用户提示：** 您可以将相关的 PDF 文件也放在 `bib/` 目录中，JabRef 会自动关联 .bib 文件和对应的 PDF 文件。
 
 然后在正文中引用：
 ```latex
