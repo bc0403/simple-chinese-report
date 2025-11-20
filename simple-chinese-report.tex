@@ -18,9 +18,24 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{hyperref}
+\usepackage[colorlinks,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue]{hyperref}
+% \usepackage{hyperref}
+\usepackage{cleveref}
 \usepackage{enumitem}
 \usepackage{caption}
+\usepackage{siunitx}
+
+% config packages
+\graphicspath{{figs/}}
+
+% \hypersetup{hidelinks}  % using `colorlink` for electronic reading or `hidelinks` for print
+\crefname{figure}{图}{图}
+\crefname{table}{表}{表}
+\crefname{equation}{式}{式}
+
 
 % 设置段落间距和缩进
 \setlength{\parskip}{0.5em}
